@@ -1,0 +1,74 @@
+.container {
+    background: #0053C0;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    float: left;
+    height: 100vh;
+    padding: 15px 5px;
+}
+
+.logo {
+    padding: 10px 0;
+    text-align: center;
+
+    img {
+        outline: none;
+        cursor: pointer;
+    }
+
+    a {
+        color: #FFFFFF;
+        text-decoration: unset;
+    }
+}
+
+.translate {
+    padding: 10px 0 30px;
+    text-align: center;
+}
+
+.section-btn {
+    background: unset;
+    display: block;
+    margin: 10px 0;
+    transition: all 0.5s;
+    position: relative;
+    &.active {
+        background: #0149A2;
+    }
+    svg path {
+        fill: #FFFFFF;
+    }
+    img {
+        width: 16px;
+    }
+}
+
+::ng-deep .section-btn .mat-button-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s;
+}
+
+.profile-btn {
+    background: #0349A3;
+    bottom: 0;
+    color: #FFFFFF;
+    display: block;
+    margin: 20px 0;
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    box-shadow: unset;
+}
+
+::ng-deep .section-btn:hover .mat-button-wrapper, ::ng-deep .section-btn.active .mat-button-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: scale(1.2) translate(-40%, -44%);
+    transition: all 0.5s;
+}

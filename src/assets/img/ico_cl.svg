@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+  <g id="Grupo_6342" data-name="Grupo 6342" transform="translate(7925.5 5457.5)">
+    <g id="Grupo_6333" data-name="Grupo 6333">
+      <g id="Grupo_6332" data-name="Grupo 6332">
+        <g id="Grupo_6331" data-name="Grupo 6331" transform="translate(-12653 -2344)">
+          <rect id="Rectángulo_4050" data-name="Rectángulo 4050" width="16" height="16" rx="0.73" transform="translate(4728 -3113)" fill="#ff4064"/>
+          <path id="Trazado_9665" data-name="Trazado 9665" d="M4735.636-3105.364H4728v-6.909a.728.728,0,0,1,.727-.727h6.909" fill="#3375cc"/>
+          <path id="Trazado_9666" data-name="Trazado 9666" d="M4735.636-3105.364H4744v-6.909a.728.728,0,0,0-.727-.727h-7.637" fill="#fff"/>
+          <path id="Trazado_9667" data-name="Trazado 9667" d="M4731.677-3111.182l.474,1.456h1.532l-1.239.9.473,1.456-1.239-.9-1.238.9.473-1.456-1.239-.9h1.533Z" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+    <rect id="Rectángulo_4054" data-name="Rectángulo 4054" width="16" height="16" rx="1" transform="translate(-7925 -5457)" fill="none" stroke="#f7f7f7" stroke-width="1"/>
+  </g>
+</svg>

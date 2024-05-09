@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g id="Grupo_27487" data-name="Grupo 27487" transform="translate(-2547 -1746)">
+    <g id="Grupo_27484" data-name="Grupo 27484">
+      <rect id="Rectángulo_5382" data-name="Rectángulo 5382" width="50" height="50" rx="4" transform="translate(2547 1746)" fill="#248DDB"/>
+      <g id="Grupo_27455" data-name="Grupo 27455" transform="translate(2559 1760)">
+        <path id="Unión_33" data-name="Unión 33" d="M2.3,21.819a2.3,2.3,0,0,1-2.3-2.3V2.3A2.3,2.3,0,0,1,2.3,0H22.967a2.3,2.3,0,0,1,2.291,2.3V19.522a2.3,2.3,0,0,1-2.291,2.3Zm0-2.3H22.967V12.66H2.3Zm20.671-9.26V2.3H2.3v7.965Z" transform="translate(0 0)" fill="#fff"/>
+        <g id="Grupo_27380" data-name="Grupo 27380" transform="translate(4.664 5.182)">
+          <rect id="Rectángulo_4025" data-name="Rectángulo 4025" width="2.297" height="2.223" transform="translate(10.262 0)" fill="#fff"/>
+          <rect id="Rectángulo_4025-2" data-name="Rectángulo 4025" width="7.428" height="2.223" transform="translate(0 0)" fill="#fff"/>
+          <rect id="Rectángulo_4026" data-name="Rectángulo 4026" width="2.297" height="2.223" transform="translate(13.706 0)" fill="#fff"/>
+        </g>
+        <g id="Grupo_27381" data-name="Grupo 27381" transform="translate(4.664 15.444)">
+          <rect id="Rectángulo_4025-3" data-name="Rectángulo 4025" width="2.297" height="2.223" transform="translate(10.262 0)" fill="#fff"/>
+          <rect id="Rectángulo_4025-4" data-name="Rectángulo 4025" width="7.428" height="2.223" transform="translate(0 0)" fill="#fff"/>
+          <rect id="Rectángulo_4026-2" data-name="Rectángulo 4026" width="2.297" height="2.223" transform="translate(13.706 0)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

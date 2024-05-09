@@ -1,0 +1,196 @@
+<div class="container" id="applications">
+    <mat-sidenav-container>
+        <mat-sidenav-content>
+            <div *ngIf="isLoadingSpinner" class="loading-shade">
+                <mat-spinner></mat-spinner>
+            </div>
+            <div>
+                <app-sidenav></app-sidenav>
+                <div class="header header-machines">
+                    <div class="container-title">
+                        <span class="title">{{ 'apps.aplications'  }}</span>
+                        <div class="badge-spinner">
+                            <div *ngIf="isLoading" class="loading-badge">
+                                <mat-spinner></mat-spinner>
+                            </div>
+                            <button class="result-text" [ngClass]="{'hide': isLoading}" disabled>{{dataLength | number:'1.0-0'}}</button>
+                        </div>
+                    </div>
+                    
+                    <mat-tab-group id="nav-aplication" [selectedIndex]="selectedTab.value" (selectedIndexChange)="selectedTab.setValue($event);changeTab($event)">
+                        <mat-tab label="{{ 'apps.all'  }}" ></mat-tab>
+                        <mat-tab label="{{ 'apps.certified'  }}" ></mat-tab>
+                        <mat-tab label="{{ 'apps.earrings'  }}" ></mat-tab>
+                        <mat-tab label="{{ 'apps.blocked'  }}" ></mat-tab>
+                        <mat-tab label="{{ 'apps.low'  }}" ></mat-tab>
+                    </mat-tab-group>
+                    <div class="right-header">
+                        <button *ngIf="dataLength > 0" (click)="download()" angulartics2On="click" angularticsAction="Click" angularticsCategory="Botones"
+                                angularticsLabel="Descargar Excel Aplicación" class="excel-btn" mat-fab
+                                matTooltip="{{ 'downloadExcel'  }}">
+                            <img alt="" src="../../assets/img/ico_excel.svg">
+                        </button>
+                        <div class="content-search">
+                            <input (keyup)="search($event)" angulartics2On="click" angularticsAction="Keyup"
+                                angularticsCategory="Buscadores" angularticsLabel="Buscar Aplicación" class="search"
+                                placeholder="{{ 'apps.searchApp'  }}">
+                            <img alt="" class="lupa" src="../../assets/img/ico_search.svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div [hidden]="isLoading" class="content">
+                <mat-table [dataSource]="dataSource" class="applications-table fade-in" matSort matSortActive="name"
+                        matSortDirection="asc" matSortDisableClear="true">
+                    <ng-container id=element._id matColumnDef="codigo" sticky>
+                        <mat-header-cell *matHeaderCellDef class="name-header">
+                            {{ 'apps.code'  }}
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element" class="name-cell">
+                            {{element.codigo || "-"}}
+                        </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="estado" sticky>
+                        <mat-header-cell *matHeaderCellDef class="name-header">
+                            <span>
+                                {{ 'apps.state'  }}
+                            </span>
+                            <button [matMenuTriggerFor]="menuStatus" class="filter-btn" mat-icon-button>
+                                <img *ngIf="!filterStatus" alt="" src="../../assets/img/ico-filter.svg">
+                                <img *ngIf="filterStatus" alt="" src="../../assets/img/ico-filter-active.svg">
+                            </button>
+                            <mat-menu #menuStatus="matMenu" class="filter-menu">
+                                <mat-checkbox
+                                *ngFor="let state of status"
+                                (change)="setFilters([$event.checked, {status: state.id}])"
+                                (click)="$event.stopPropagation()">
+                                {{state.name}}
+                                </mat-checkbox>
+                                <button (click)="filterEventEmitter.emit()" class="apply-filter-btn" mat-button>
+                                    {{ 'filter'  }}
+                                </button>
+                            </mat-menu>
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element" class="name-cell">
+                            <img class="app-{{element.estado}}"> <p>{{element.estado || "-"}}</p>
+                        </mat-cell>
+                    </ng-container>
+                    <ng-container id=element._id matColumnDef="nombre" sticky>
+                        <mat-header-cell *matHeaderCellDef class="name-header">
+                            {{ 'apps.applicationName'  }}
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element" class="name-cell">
+                            <p>{{!element.nombre || element.nombre == "" ? "-" : element.nombre}}</p>
+                        </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="pais">
+                        <mat-header-cell *matHeaderCellDef>
+                            <span>
+                                {{ 'apps.country'  }}
+                            </span>
+                            <button [matMenuTriggerFor]="menuCountry" class="filter-btn" mat-icon-button>
+                                <img *ngIf="!filterActiveCountry" alt="" src="../../assets/img/ico-filter.svg">
+                                <img *ngIf="filterActiveCountry" alt="" src="../../assets/img/ico-filter-active.svg">
+                            </button>
+                            <mat-menu #menuCountry="matMenu" class="filter-menu">
+                                <mat-checkbox
+                                *ngFor="let pais of paises"
+                                (change)="setFilters([$event.checked, {pais: pais.id}])"
+                                (click)="$event.stopPropagation()">
+                                {{pais.name}}
+                                </mat-checkbox>
+                                <button (click)="filterEventEmitter.emit()" class="apply-filter-btn" mat-button>
+                                    {{ 'filter'  }}
+                                </button>
+                            </mat-menu>
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element" class="country_name">
+                            <img class="country {{ p=='EE.UU' ? 'USA' : p }}" *ngFor="let p of element.pais">
+                            {{element.pais ? "" : "-"}}
+                        </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="gerencia">
+                        <mat-header-cell *matHeaderCellDef>
+                            <span>
+                                {{ 'apps.systemsManagement'  }}
+                            </span>
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                            {{!element.gerencia || element.gerencia == "" ? "-" : element.gerencia}}
+                        </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="unidad_negocio">
+                        <mat-header-cell *matHeaderCellDef>
+                            <span>
+                                {{ 'apps.businessUnit'  }}
+                            </span>
+                            <button [matMenuTriggerFor]="menuUunn" class="filter-btn" mat-icon-button>
+                                <img *ngIf="!filterActiveStatus" alt="" src="../../assets/img/ico-filter.svg">
+                                <img *ngIf="filterActiveStatus" alt="" src="../../assets/img/ico-filter-active.svg">
+                            </button>
+                            <mat-menu #menuUunn="matMenu" class="filter-menu">
+                                <div class="checkbox-container">
+                                    <mat-checkbox
+                                    *ngFor="let uunn of unitsArray"
+                                    (change)="setFilters([$event.checked, {unidad_negocio: uunn.id}])"
+                                    (click)="$event.stopPropagation()">
+                                    {{uunn.name}}
+                                    </mat-checkbox>
+                                </div>
+                                <button (click)="filterEventEmitter.emit()" class="apply-filter-btn" mat-button>
+                                    {{ 'filter'  }}
+                                </button>
+                            </mat-menu>
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                            {{toString(element.unidad_negocio) || "-"}}
+                        </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="certificacion">
+                        <mat-header-cell *matHeaderCellDef>
+                            <span>
+                                {{ 'apps.certification'  }}
+                            </span>
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                            <button *ngIf="element.certificacion=='certificada'" (click)="openSidenav(element.codigo, true)" mat-flat-button class="certificacion certifiedOk">
+                                <mat-icon>check_circle_outline</mat-icon>  Certificada</button>
+                            <button *ngIf="element.certificacion=='pendiente'" (click)="openSidenav(element.codigo, true)" mat-flat-button class="certificacion certifiedPendiente">
+                                <mat-icon>remove_circle_outline</mat-icon>  Pendiente</button>
+                            <button *ngIf="element.certificacion=='bloqueada'" (click)="openSidenav(element.codigo, true)" mat-flat-button class="certificacion certifiedBloqueda">
+                                <mat-icon>pause_circle_outline</mat-icon>  Bloqueda</button>
+                        </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="actions" stickyEnd>
+                        <mat-header-cell *matHeaderCellDef>
+                            {{ 'apps.actions'  }}
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                            <button (click)="openSidenav(element.codigo,false)" angulartics2On="click" angularticsAction="Click"
+                                    angularticsCategory="Botones" angularticsLabel="Ver Aplicación" class="view-btn"
+                                    mat-icon-button>
+                                <svg height="12" viewBox="0 0 19.51 12" width="19.51"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g data-name="Grupo 6038" id="Grupo_6038" transform="translate(-1416.652 -319.096)">
+                                        <path d="M1426.407,331.1c3.386,0,6.62-1.893,9.356-5.476l.4-.524-.4-.523c-2.734-3.583-5.969-5.477-9.356-5.477s-6.623,1.894-9.356,5.477l-.4.523.4.524C1419.786,329.2,1423.021,331.1,1426.407,331.1Zm0-10.274c2.666,0,5.272,1.474,7.57,4.274-2.3,2.8-4.9,4.274-7.57,4.274s-5.272-1.475-7.569-4.274C1421.134,322.3,1423.74,320.822,1426.407,320.822Z" data-name="Trazado 8749"
+                                            id="Trazado_8749"
+                                            transform="translate(0)"/>
+                                        <path d="M1427.362,329a3.452,3.452,0,1,0-3.452-3.452A3.456,3.456,0,0,0,1427.362,329Zm0-5.178a1.726,1.726,0,1,1-1.726,1.726A1.728,1.728,0,0,1,1427.362,323.822Z" data-name="Trazado 8750"
+                                            id="Trazado_8750"
+                                            transform="translate(-0.994 -0.411)"/>
+                                    </g>
+                                </svg>
+                            </button>
+                        </mat-cell>
+                    </ng-container>
+                    <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>                   
+                <mat-paginator [length]="dataLength" [pageSize]="100" [showFirstLastButtons]="true" class="paginator">
+                </mat-paginator>
+            </div>
+        </mat-sidenav-content>
+
+    </mat-sidenav-container>
+</div>
+

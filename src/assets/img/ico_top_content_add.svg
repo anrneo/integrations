@@ -1,0 +1,47 @@
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #8d96a5;
+      }
+
+      .cls-1 {
+        stroke: #8c95a4;
+        stroke-width: 0.4px;
+      }
+
+      .cls-3 {
+        fill: #97a0af;
+      }
+    </style>
+  </defs>
+  <title>vectores</title>
+  <g id="Grupo_26762" data-name="Grupo 26762">
+    <g id="Grupo_26710" data-name="Grupo 26710">
+      <path id="Trazado_30175" data-name="Trazado 30175" class="cls-1" d="M59.42,37.62V88h20V55.3l5.21-.48V90.37a2.87,2.87,0,0,1-2.87,2.87H56.21a2.87,2.87,0,0,1-2.87-2.87h0v-53Z"/>
+    </g>
+    <g id="Grupo_26561" data-name="Grupo 26561">
+      <g id="Rectángulo_4025-3" data-name="Rectángulo 4025-3">
+        <rect id="Rectángulo_5155" data-name="Rectángulo 5155" class="cls-2" x="65.5" y="63.72" width="6.95" height="7.81"/>
+      </g>
+      <g id="Rectángulo_4026-2" data-name="Rectángulo 4026-2">
+        <rect id="Rectángulo_5157" data-name="Rectángulo 5157" class="cls-2" x="65.5" y="75.01" width="6.95" height="7.81"/>
+      </g>
+    </g>
+    <g id="Grupo_26711" data-name="Grupo 26711">
+      <path id="Trazado_30176" data-name="Trazado 30176" class="cls-1" d="M13.4,90.37v-75a2.88,2.88,0,0,1,2.87-2.87H41.8a2.87,2.87,0,0,1,2.86,2.87v75a2.87,2.87,0,0,1-2.86,2.87H16.27A2.87,2.87,0,0,1,13.4,90.37Zm5.21-71.79V88h20V18.58Z"/>
+    </g>
+    <g id="Grupo_26561-2" data-name="Grupo 26561-2">
+      <g id="Rectángulo_4025-3-2" data-name="Rectángulo 4025-3-2">
+        <rect id="Rectángulo_5158" data-name="Rectángulo 5158" class="cls-2" x="25.56" y="63.72" width="6.95" height="7.81"/>
+      </g>
+      <g id="Rectángulo_4025-4-2" data-name="Rectángulo 4025-4-2">
+        <rect id="Rectángulo_5159" data-name="Rectángulo 5159" class="cls-2" x="25.56" y="23.79" width="6.95" height="24.31"/>
+      </g>
+      <g id="Rectángulo_4026-2-2" data-name="Rectángulo 4026-2-2">
+        <rect id="Rectángulo_5160" data-name="Rectángulo 5160" class="cls-2" x="25.56" y="75.01" width="6.95" height="7.81"/>
+      </g>
+    </g>
+  </g>
+  <path class="cls-3" d="M80.24,45.48l-.09-14,14-.1a2.85,2.85,0,1,0,0-5.69l-14,.09-.1-14a2.85,2.85,0,1,0-5.69,0l.1,14-14,.1a2.85,2.85,0,1,0,0,5.69l14-.1.1,14a2.8,2.8,0,0,0,.83,2,2.84,2.84,0,0,0,4.86-2Z"/>
+</svg>

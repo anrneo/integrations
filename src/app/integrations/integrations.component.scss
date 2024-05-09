@@ -1,0 +1,244 @@
+@import '../../_variables';
+
+.container#applications {
+
+    box-sizing: border-box;
+    height: 100vh;
+    overflow: auto;
+    
+
+    mat-sidenav-container > mat-sidenav {
+        overflow-y: unset;
+        width: 83vw;
+    }
+
+    .header {
+        background: #FFFFFF;
+        border-bottom: 1px solid #EBECF0;
+        font-family: 'Fira Sans', sans-serif;
+        font-size: 20px;
+        -webkit-font-smoothing: antialiased;
+        font-weight: 500;
+        overflow: auto;
+        padding: 0px 2% 0;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .container-title {
+            min-width: 190px;
+        }
+    }
+
+    .title {
+        color: #253858;
+        line-height: 36px;
+    }
+
+    ::-webkit-input-placeholder {
+        color: $blue;
+        font-family: 'Fira Sans', sans-serif;
+        font-size: 13px;
+    }
+
+    .content {
+        background: #FFFFFF;
+        box-sizing: border-box;
+        height: calc(100vh - 69px);
+        overflow: auto;
+        padding-bottom: 20px;
+    }
+
+    .view-btn {
+        float: right;
+        margin-left: 10px;
+    }
+
+    .view-btn svg path {
+        fill: #B3BAC5;
+    }
+
+    .applications-table {
+        font-family: 'Fira Sans', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        margin: auto;
+        width: 100%;
+    }
+
+    mat-header-cell {
+        text-transform: uppercase;
+    }
+
+    mat-cell:first-of-type, mat-footer-cell:first-of-type, mat-header-cell:first-of-type {
+        padding-left: 24px !important;
+    }
+
+    .mat-cell, .mat-footer-cell {
+        font-size: 0.8em;
+    }
+
+    .result-block {
+        background: $red;
+        border: 1px solid $red;
+        border-radius: 40px;
+        color: #FFFFFF;
+        font-family: $primary-font;
+        font-size: 15px;
+        font-weight: 500;
+        height: 25px;
+        margin: 0 auto 0 10px;
+        padding: 0 10px;
+    }
+
+    .applications-table {
+        mat-header-row, mat-row {
+            border: none;
+        }
+
+        mat-row:nth-child(2n) {
+            background: #F8F9FA;
+        }
+
+        [class *= 'mat-column-'] {
+            padding: 0 10px;
+
+            p {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+
+        .mat-column-Codigo {
+            max-width: 7% !important;
+        }
+
+        .mat-column-actions {
+            max-width: 7% !important;
+        }
+
+        .mat-column-certificacion {
+            flex: 1.5;
+            max-width: 10% !important;
+        }
+
+        .mat-column-pais {
+            max-width: 12% !important;
+        }
+
+        .mat-column-unidad_negocio {
+            max-width: 14% !important;
+        }
+
+        mat-row:hover mat-cell {
+            color: $blue;
+            cursor: default;
+            transition: all 0.4s;
+        }
+
+        mat-row:hover .view-btn svg path {
+            fill: $blue;
+            transition: all 0.4s;
+        }
+
+        mat-header-row {
+            border-bottom: 1px solid #EBECF0;
+        }
+    }
+
+    .right-header {
+        display: flex;
+        justify-content: space-between;
+        .lupa {
+            right: 3%;
+            top: 30px;
+        }
+    }
+
+    .certificacion {
+        border-radius: 16px;
+        padding-left: 7px;
+        font-size: 13px;
+        .mat-icon {
+            font-size:14px;
+            padding-top: 8px;
+        }
+    }
+
+    .certifiedOk {
+        background: #D8F0E9 !important;
+        color: #3CB48F !important;
+    }
+
+    .certifiedPendiente {
+        background:#0000001f !important;
+        color:#00000042 !important;
+    }
+
+    .certifiedBloqueda {
+        background: #FFCCCC !important;
+        color: #FF1980 !important;
+    }
+
+    .fade-in {
+        -moz-animation: fadeIn ease 0.9s;
+        -ms-animation: fadeIn ease 0.9s;
+        -o-animation: fadeIn ease 0.9s;
+        -webkit-animation: fadeIn ease 0.9s;
+        animation: fadeIn ease 2s;
+    }
+
+    .app-Activa {
+        content: url("./../../assets/img/ico_on.svg");
+        margin-right: 10px;
+    }
+    
+    .app-Inactivo {
+        content: url("./../../assets/img/ico_off.svg");
+        margin-right: 10px;
+    }
+
+    .remove-display {
+        display: unset;
+    }
+
+    .container-mobile {
+        display: none;
+    }
+
+    .country_name {
+        text-transform: capitalize;
+    }
+
+    .filter-menu {
+        background: #00A7FF;
+        color: white;
+        font-family: 'Fira Sans', sans-serif;
+        font-size: 14px;
+        -webkit-font-smoothing: antialiased;
+        font-weight: 600;
+    }
+
+    @media screen and (max-width: 1224px) {
+        .mat-icon {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        mat-sidenav-container > mat-sidenav {
+            overflow-y: unset;
+            width: 95vw;
+        }
+    }
+
+    @media screen and (max-width: 960px) {
+        .container {
+            display: none;
+        }
+
+        .container-mobile {
+            display: block;
+        }
+    }
+}

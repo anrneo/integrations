@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="51" height="51" viewBox="0 0 51 51">
+  <g id="Grupo_27893" data-name="Grupo 27893" transform="translate(-39 -28)">
+    <circle id="Elipse_552" data-name="Elipse 552" cx="25.5" cy="25.5" r="25.5" transform="translate(39 28)" fill="#ccedff"/>
+    <g id="ico-maquina" transform="translate(54 45.002)">
+      <path id="Unión_26" data-name="Unión 26" d="M1.874,17.792A1.879,1.879,0,0,1,0,15.919V1.873A1.878,1.878,0,0,1,1.874,0H18.728A1.878,1.878,0,0,1,20.6,1.873V15.919a1.878,1.878,0,0,1-1.871,1.873Zm0-1.873H18.728v-5.6H1.874ZM18.728,8.368V1.873H1.874V8.368Z" transform="translate(0 -0.002)" fill="#00a7ff"/>
+      <g id="Grupo_26560" data-name="Grupo 26560" transform="translate(3.326 4.224)">
+        <rect id="Rectángulo_4025" data-name="Rectángulo 4025" width="1.873" height="1.813" transform="translate(8.367)" fill="#00a7ff"/>
+        <rect id="Rectángulo_4025-2" data-name="Rectángulo 4025" width="6.057" height="1.813" fill="#00a7ff"/>
+        <rect id="Rectángulo_4026" data-name="Rectángulo 4026" width="1.873" height="1.813" transform="translate(11.176)" fill="#00a7ff"/>
+      </g>
+      <g id="Grupo_26561" data-name="Grupo 26561" transform="translate(3.326 12.591)">
+        <rect id="Rectángulo_4025-3" data-name="Rectángulo 4025" width="1.873" height="1.813" transform="translate(8.367)" fill="#00a7ff"/>
+        <rect id="Rectángulo_4025-4" data-name="Rectángulo 4025" width="6.057" height="1.813" fill="#00a7ff"/>
+        <rect id="Rectángulo_4026-2" data-name="Rectángulo 4026" width="1.873" height="1.813" transform="translate(11.176)" fill="#00a7ff"/>
+      </g>
+    </g>
+  </g>
+</svg>

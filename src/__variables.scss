@@ -1,0 +1,157 @@
+/* *********************************************************************
+                              COLORES
+********************************************************************* */
+
+/* VARIABLES */
+$blue: #0053C0;
+$blue-secondary: #0068B2;
+$blue-dark: #023B6B;
+$blue-text: #253858;
+$grey-text: #505f79;
+$blue-light: #00A7FF;
+$blue-lightest: #e5f6ff;
+$grey-lightest: #F8F9FA;
+$grey-light: #EBECF0;
+$grey-almost: #DFE1E6;
+$grey: #C1C7D0;
+$grey-light-mantenimiento: #F6F6F8;
+$grey-almost-dark: #8993A4;
+$grey-dark: #42526E;
+$grey-dark-mantenimiento: #97A0AF;
+$green: #3CB48F;
+$green-light: #B1E1D2;
+$red: #ED1D45;
+$red-delete: #F04A6A;
+$red-light:#FCD1DA;
+$yellow: #F8B708;
+$white: #ffffff;
+$text-blue-dark: #344563;
+
+/* *********************************************************************
+                              TEXTOS
+********************************************************************* */
+@font-face {
+  font-family: "Apercu";
+  src: url("/assets/fonts/Apercu-Font/Apercu\ Pro\ Light.otf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Apercu";
+  src: url("/assets/fonts/Apercu-Font/Apercu\ Regular.otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Apercu";
+  src: url("/assets/fonts/Apercu-Font/Apercu\ Pro\ Medium.otf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Apercu";
+  src: url("/assets/fonts/Apercu-Font/Apercu\ Bold.otf");
+  font-weight: 700;
+}
+
+$primary-font: 'Fira Sans', sans-serif;
+$secondary-font: 'Apercu', 'Fira Sans', sans-serif;
+
+
+/* *********************************************************************
+                              Flexbox
+********************************************************************* */
+
+/* FLEXBOX */
+@mixin flexbox{
+   display:-webkit-box; // old
+   display:-moz-box; // old
+   display:-ms-flexbox; // ie
+   display:-webkit-flex; // new
+   display:flex; // new
+}
+
+@mixin inline-flex {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+
+@mixin flex($values) {
+     -webkit-box-flex: $values;
+ -moz-box-flex:  $values;
+ -ms-flex:  $values;
+ -webkit-flex:  $values;
+ flex:  $values;
+}
+
+@mixin flex-direction($direction)
+   {
+   @if $direction == column
+   {
+   -webkit-flex-direction:vertical;
+   -moz-flex-direction:vertical;
+   -ms-flex-direction:column;
+   -webkit-flex-direction:column;
+   flex-direction:column;
+   }
+   @else
+   {
+   -webkit-flex-direction:horizontal;
+   -moz-flex-direction:horizontal;
+   -ms-flex-direction:row;
+   -webkit-flex-direction:row;
+   flex-direction:row;
+   }
+}
+
+@mixin align-items($values) {
+  -webkit-box-align: $values;
+  -moz-box-align: $values;
+  -ms-flex-align: $values;
+  -webkit-align-items:$values;
+  align-items: $values;
+}
+
+@mixin justify-content($values) {
+  -webkit-box-justify-content: $values;
+  -moz-box-justify-content: $values;
+  -ms-flex-justify-content: $values;
+  -webkit-justify-content:$values;
+  justify-content: $values;
+}
+
+/* CONTROLADORES CSS */
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin transition-property($property...) {
+    -moz-transition-property:    $property;
+    -o-transition-property:      $property;
+    -webkit-transition-property: $property;
+    transition-property:         $property;
+}
+@mixin transition-duration($duration...) {
+    -moz-transition-property:    $duration;
+    -o-transition-property:      $duration;
+    -webkit-transition-property: $duration;
+    transition-property:         $duration;
+}
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function:    $timing;
+    -o-transition-timing-function:      $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function:         $timing;
+}
+@mixin transition-delay($delay...) {
+    -moz-transition-delay:    $delay;
+    -o-transition-delay:      $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay:         $delay;
+}
+
+
+
